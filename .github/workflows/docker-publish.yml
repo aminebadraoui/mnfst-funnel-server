@@ -22,7 +22,7 @@ jobs:
         context: .
         file: ./Dockerfile.prod
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/mnfst-starter-server:prod
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/mnfst-funnel-server:prod
 
     - name: Build and push development Docker image
       uses: docker/build-push-action@v4
@@ -30,4 +30,4 @@ jobs:
         context: .
         file: ./Dockerfile.dev
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/mnfst-starter-server:dev
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/mnfst-funnel-server:dev
