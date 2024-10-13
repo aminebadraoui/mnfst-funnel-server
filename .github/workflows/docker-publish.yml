@@ -23,6 +23,9 @@ jobs:
         file: ./Dockerfile.prod
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/mnfst-funnel-server:prod
+        build-args: |
+          DATABASE_URL=${{ secrets.DATABASE_URL }}
+          JWT_SECRET=${{ secrets.JWT_SECRET }}
 
     - name: Build and push development Docker image
       uses: docker/build-push-action@v4
